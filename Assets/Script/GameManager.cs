@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     public static GameManager _Instance;
     private Vector3 curPos;
 
+    public GameObject win;
+    public GameObject lose;
+
     public void Awake()
     {
         _Instance = this;
@@ -51,16 +54,22 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-               //鸟小于0，输
-
+                //鸟小于0，输
+                lose.SetActive(true);
             }
         }
         else
         {
             //猪小于0，胜利
-
+            win.SetActive(true);
         }
     }
 
-   
+    //展示星星逻辑
+    public void showStart()
+    {
+
+    }
+
+
 }
