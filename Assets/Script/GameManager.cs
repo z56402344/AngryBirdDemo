@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject win;
     public GameObject lose;
+    public GameObject[] starts;
 
     public void Awake()
     {
@@ -66,9 +67,20 @@ public class GameManager : MonoBehaviour
     }
 
     //展示星星逻辑
-    public void showStart()
+    public void ShowStart()
     {
+        StartCoroutine("show");
+    }
 
+    //携程
+    IEnumerator show()
+    {
+        for (int i = 0; i < birds.Count+1;i++)
+        {
+            yield return new WaitForSeconds(0.2f);
+            starts[i].SetActive(true);
+        }
+         
     }
 
 

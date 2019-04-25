@@ -7,6 +7,6 @@ public class Win : MonoBehaviour
     public void ShowStart()
     {
         print("播放星星动画 >>>");
-        GameManager._Instance.showStart();
+        GameManager._Instance.ShowStart();
     }
 }
