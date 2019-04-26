@@ -20,6 +20,9 @@ public class Bird : MonoBehaviour
     private bool canMove = true;//解决连续点击鼠标小鸟回收的bug
 
     public float smooth = 3;//摄像机平滑速度
+    public AudioClip flyAudio;
+    public AudioClip selectAudio;
+
 
     public void Awake()
     {
@@ -43,6 +46,7 @@ public class Bird : MonoBehaviour
     {
         if (canMove)
         {
+            AudioPlay(flyAudio);
             isClick = false;
             rd.isKinematic = false;
             //sp.enabled = false;
@@ -102,6 +106,7 @@ public class Bird : MonoBehaviour
 
     public void Next()
     {
+        AudioPlay(selectAudio);
         GameManager._Instance.birds.Remove(this);
         Destroy(gameObject);
         Instantiate(boom,transform.position,Quaternion.identity);
@@ -112,4 +117,10 @@ public class Bird : MonoBehaviour
     {
         mt.ClearTrail();
     }
+
+    public void AudioPlay(AudioClip audioClip)
+    {
+        AudioSource.PlayClipAtPoint(audioClip,transform.position);
+    }
+
 }

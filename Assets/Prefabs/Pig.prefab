@@ -137,3 +137,6 @@ MonoBehaviour:
   boom: {fileID: 6195944015929967801, guid: 5a2aced11d3544d1281f20d8e38144f5, type: 3}
   score: {fileID: 229275781060717173, guid: ac8d7b084e465409697238e8a7a73889, type: 3}
   isPig: 1
+  dieAudio: {fileID: 8300000, guid: c1a5f2757fb06fd45812883f28dbf66b, type: 3}
+  hurtAudio: {fileID: 8300000, guid: 10ea50ad52f85f04d99128c58ee3b632, type: 3}
+  birdAudio: {fileID: 8300000, guid: 32b5cb2ec3029484eb0a71e43bd697e0, type: 3}
