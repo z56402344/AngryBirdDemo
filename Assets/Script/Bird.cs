@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.UIElements;
 
 public class Bird : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Bird : MonoBehaviour
 
     [HideInInspector]//让字段不显示在面板中
     public SpringJoint2D sp;
-    private Rigidbody2D rd;
+    protected Rigidbody2D rd;
     private TestMyTrail mt;
     public LineRenderer rightRender;
     public LineRenderer leftRender;
@@ -22,6 +23,7 @@ public class Bird : MonoBehaviour
     public float smooth = 3;//摄像机平滑速度
     public AudioClip flyAudio;
     public AudioClip selectAudio;
+    public bool isFly = false;
 
 
     public void Awake()
@@ -46,6 +48,7 @@ public class Bird : MonoBehaviour
     {
         if (canMove)
         {
+            isFly = true;
             AudioPlay(flyAudio);
             isClick = false;
             rd.isKinematic = false;
@@ -75,6 +78,12 @@ public class Bird : MonoBehaviour
                 transform.position = pos + rightPos.position;
             }
             Line();
+        }
+
+        if (isFly && Input.GetMouseButtonDown(0))
+        {
+            //在飞行的过程，同时按下鼠标左键
+            ShowSkill();
         }
 
         float posX = transform.position.x;
@@ -121,6 +130,11 @@ public class Bird : MonoBehaviour
     public void AudioPlay(AudioClip audioClip)
     {
         AudioSource.PlayClipAtPoint(audioClip,transform.position);
+    }
+
+    public virtual void ShowSkill()
+    {
+        isFly = false;
     }
 
 }
