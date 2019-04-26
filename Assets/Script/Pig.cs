@@ -24,8 +24,12 @@ public class Pig : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.tag == "Player")
+        {
+            AudioPlay(birdAudio);
+            collision.transform.GetComponent<Bird>().Hurt();
+        }
 
-        AudioPlay(birdAudio);
         //collision.relativeVelocity.magnitude 是受到的相对速度
         if (collision.relativeVelocity.magnitude > maxSpeed)
         {

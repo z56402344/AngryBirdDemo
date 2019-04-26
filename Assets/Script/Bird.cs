@@ -16,6 +16,8 @@ public class Bird : MonoBehaviour
     private TestMyTrail mt;
     public LineRenderer rightRender;
     public LineRenderer leftRender;
+    private SpriteRenderer spriteRenderer;
+    public Sprite hurt;
 
     public GameObject boom;
     private bool canMove = true;//解决连续点击鼠标小鸟回收的bug
@@ -31,6 +33,7 @@ public class Bird : MonoBehaviour
         sp = GetComponent<SpringJoint2D>();
         rd = GetComponent<Rigidbody2D>();
         mt = GetComponent<TestMyTrail>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     //鼠标按下事件
@@ -125,6 +128,7 @@ public class Bird : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         mt.ClearTrail();
+        //Hurt();
     }
 
     public void AudioPlay(AudioClip audioClip)
@@ -135,6 +139,11 @@ public class Bird : MonoBehaviour
     public virtual void ShowSkill()
     {
         isFly = false;
+    }
+
+    public void Hurt()
+    {
+        spriteRenderer.sprite = hurt;
     }
 
 }
