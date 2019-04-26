@@ -17,7 +17,9 @@ public class Bird : MonoBehaviour
     public LineRenderer leftRender;
 
     public GameObject boom;
+    private bool canMove = true;//解决连续点击鼠标小鸟回收的bug
 
+    public float smooth = 3;//摄像机平滑速度
 
     public void Awake()
     {
@@ -29,21 +31,28 @@ public class Bird : MonoBehaviour
     //鼠标按下事件
     public void OnMouseDown()
     {
-        isClick = true;
-        rd.isKinematic = true;
+        if (canMove)
+        {
+            isClick = true;
+            rd.isKinematic = true;
+        }
     }
 
     //鼠标弹起事件
     public void OnMouseUp()
     {
-        isClick = false;
-        rd.isKinematic = false;
-        //sp.enabled = false;
-        Invoke("Fly",0.1f);
+        if (canMove)
+        {
+            isClick = false;
+            rd.isKinematic = false;
+            //sp.enabled = false;
+            Invoke("Fly", 0.1f);
 
-        //清除皮筋划线
-        rightRender.enabled = false;
-        leftRender.enabled = false;
+            //清除皮筋划线
+            rightRender.enabled = false;
+            leftRender.enabled = false;
+            canMove = false;
+        }
     }
 
     public void Update()
@@ -63,6 +72,9 @@ public class Bird : MonoBehaviour
             }
             Line();
         }
+
+        float posX = transform.position.x;
+        Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position,new Vector3(Mathf.Clamp(posX,0,15),Camera.main.transform.position.y,Camera.main.transform.position.z),smooth * Time.deltaTime);
 
     }
 

@@ -66,7 +66,9 @@
     <Compile Include="Assets\Script\Bird.cs" />
     <Compile Include="Assets\Script\Boom.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
+    <Compile Include="Assets\Script\Pausepanel.cs" />
     <Compile Include="Assets\Script\Pig.cs" />
+    <Compile Include="Assets\Script\Start.cs" />
     <Compile Include="Assets\Script\TestMyTrail.cs" />
     <Compile Include="Assets\Script\Win.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">

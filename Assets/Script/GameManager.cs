@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -72,7 +73,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine("show");
     }
 
-    //携程
+    //协程
     IEnumerator show()
     {
         for (int i = 0; i < birds.Count+1;i++)
@@ -81,6 +82,21 @@ public class GameManager : MonoBehaviour
             starts[i].SetActive(true);
         }
          
+    }
+
+    //重新开始
+    public void Retry()
+    {
+        print("GameManager ---> Retry()");
+        lose.SetActive(false);
+        win.SetActive(false);
+        SceneManager.LoadScene(2);
+    }
+
+    //回主界面
+    public void GoHome()
+    {
+        SceneManager.LoadScene(1);
     }
 
 
