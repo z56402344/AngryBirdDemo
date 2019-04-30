@@ -82,6 +82,8 @@ TextureImporter:
     21300154: BUTTONS_77
     21300156: BUTTONS_78
     21300158: BUTTONS_79
+    21300160: BUTTONS_80
+    21300162: BUTTONS_81
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -567,10 +569,10 @@ TextureImporter:
       name: BUTTONS_20
       rect:
         serializedVersion: 2
-        x: 0
-        y: 559
-        width: 101
-        height: 101
+        x: 59
+        y: 638
+        width: 97
+        height: 82
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1209,7 +1211,7 @@ TextureImporter:
         serializedVersion: 2
         x: 202
         y: 256
-        width: 101
+        width: 69
         height: 101
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1227,10 +1229,10 @@ TextureImporter:
       name: BUTTONS_53
       rect:
         serializedVersion: 2
-        x: 303
-        y: 256
-        width: 101
-        height: 101
+        x: 287
+        y: 224
+        width: 92
+        height: 81
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1409,8 +1411,8 @@ TextureImporter:
         serializedVersion: 2
         x: 202
         y: 155
-        width: 101
-        height: 101
+        width: 84
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1427,10 +1429,10 @@ TextureImporter:
       name: BUTTONS_63
       rect:
         serializedVersion: 2
-        x: 303
+        x: 335
         y: 155
-        width: 101
-        height: 101
+        width: 69
+        height: 62
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1759,6 +1761,46 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 50be840f228bd491d9cdd06f2e57978e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BUTTONS_80
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 233
+        width: 9
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d955e23126a1f450ca5a790743ea6a38
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BUTTONS_81
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 590
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0940d43ec0521487681fac9e584e3037
       vertices: []
       indices: 
       edges: []

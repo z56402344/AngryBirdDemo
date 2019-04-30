@@ -26,7 +26,9 @@ public class Pig : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            //当碰撞的对象tag 是 Player时，
             AudioPlay(birdAudio);
+            //替换小鸟受伤图片
             collision.transform.GetComponent<Bird>().Hurt();
         }
 

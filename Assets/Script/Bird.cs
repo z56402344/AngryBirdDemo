@@ -13,10 +13,10 @@ public class Bird : MonoBehaviour
     [HideInInspector]//让字段不显示在面板中
     public SpringJoint2D sp;
     protected Rigidbody2D rd;
-    private TestMyTrail mt;
+    protected TestMyTrail mt;
     public LineRenderer rightRender;
     public LineRenderer leftRender;
-    private SpriteRenderer spriteRenderer;
+    protected SpriteRenderer spriteRenderer;
     public Sprite hurt;
 
     public GameObject boom;
@@ -116,7 +116,7 @@ public class Bird : MonoBehaviour
         leftRender.SetPosition(1, transform.position);
     }
 
-    public void Next()
+    public virtual void Next()
     {
         AudioPlay(selectAudio);
         GameManager._Instance.birds.Remove(this);
@@ -141,6 +141,7 @@ public class Bird : MonoBehaviour
         isFly = false;
     }
 
+    //小鸟受伤后的图片
     public void Hurt()
     {
         spriteRenderer.sprite = hurt;

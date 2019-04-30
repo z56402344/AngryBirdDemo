@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3626668568205030994}
   m_Layer: 0
   m_Name: WoodCude
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
   sprite: {fileID: 21300022, guid: 830ea85f8d7434bcbb9a8316c6b7396b, type: 3}
   boom: {fileID: 6195944015929967801, guid: 5a2aced11d3544d1281f20d8e38144f5, type: 3}
   score: {fileID: 229275781060717173, guid: ac8d7b084e465409697238e8a7a73889, type: 3}
-  isPig: 0
+  isPig: 1
   dieAudio: {fileID: 8300000, guid: f7872a240c3a867458646a6a01dde6a2, type: 3}
   hurtAudio: {fileID: 8300000, guid: 53dea70923c95cb45864ff65eeb38785, type: 3}
   birdAudio: {fileID: 8300000, guid: 32b5cb2ec3029484eb0a71e43bd697e0, type: 3}
