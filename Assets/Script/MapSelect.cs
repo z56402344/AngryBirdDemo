@@ -15,7 +15,7 @@ public class MapSelect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int start = PlayerPrefs.GetInt("totalNum",0);
+        int start = PlayerPrefs.GetInt(GameManager.TOTAL, 0);
         if (start >= startNum)
         {
             isSelect = true;
@@ -36,12 +36,6 @@ public class MapSelect : MonoBehaviour
             Map.SetActive(false);
             Panel.SetActive(true);
         }
-    }
-
-    public void Return()
-    {
-        Map.SetActive(true);
-        Panel.SetActive(false);
     }
 
 

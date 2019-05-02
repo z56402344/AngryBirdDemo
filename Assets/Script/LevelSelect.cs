@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelect : MonoBehaviour
 {
+    public static string LEVEL = "level";
+    public static string NOW_LEVEL = "nowLevel";
+
     public bool isSelect = false;
     public Sprite levelBG;
     private Image image;
@@ -13,6 +16,7 @@ public class LevelSelect : MonoBehaviour
 
     public GameObject Map;
     public GameObject Panel;
+    public GameObject[] starts;
 
     public void Awake()
     {
@@ -25,12 +29,26 @@ public class LevelSelect : MonoBehaviour
         if(transform.parent.GetChild(0).name == gameObject.name)
         {
             isSelect = true;
-           
+
         }
+        else
+        {
+            int preLevel = int.Parse(gameObject.name)-1;
+            if (PlayerPrefs.GetInt(LEVEL + preLevel) > 0)
+            {
+                isSelect = true;
+            }
+        }
+
         if (isSelect)
         {
             image.overrideSprite = levelBG;
             transform.Find("Text").gameObject.SetActive(true);
+        }
+        int startCount = PlayerPrefs.GetInt(LEVEL + gameObject.name);
+        for (int i =0; i < startCount; i++)
+        {
+            starts[i].SetActive(true);
         }
     }
 
@@ -38,7 +56,8 @@ public class LevelSelect : MonoBehaviour
     {
         if (isSelect)
         {
-            PlayerPrefs.SetString("nowLevel", "level" + gameObject.name);
+            //设置当前关卡名，用于关卡结束时存储数据时的key值
+            PlayerPrefs.SetString(NOW_LEVEL, LEVEL + gameObject.name);
             SceneManager.LoadScene(2);
         }
     }

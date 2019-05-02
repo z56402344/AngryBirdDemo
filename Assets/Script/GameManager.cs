@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static string TOTAL = "total";
+
     public List<Bird> birds;
     public List<Pig> pigs;
     public static GameManager _Instance;
@@ -13,6 +15,8 @@ public class GameManager : MonoBehaviour
     public GameObject win;
     public GameObject lose;
     public GameObject[] starts;
+    private int startNum = 0;
+    public int levelNum = 10;
 
     public void Awake()
     {
@@ -76,10 +80,10 @@ public class GameManager : MonoBehaviour
     //协程
     IEnumerator show()
     {
-        for (int i = 0; i < birds.Count+1;i++)
+        for (; startNum < birds.Count+1; startNum++)
         {
             yield return new WaitForSeconds(0.2f);
-            starts[i].SetActive(true);
+            starts[startNum].SetActive(true);
         }
          
     }
@@ -90,14 +94,35 @@ public class GameManager : MonoBehaviour
         print("GameManager ---> Retry()");
         lose.SetActive(false);
         win.SetActive(false);
+        SaveData();
         SceneManager.LoadScene(2);
     }
 
     //回主界面
     public void GoHome()
     {
+        SaveData();
         SceneManager.LoadScene(1);
     }
 
+
+    public void SaveData()
+    {
+        print("GameManager ---> startNu="+ startNum);
+        int startCount = PlayerPrefs.GetInt(LevelSelect.LEVEL + gameObject.name);
+        if(startNum > startCount)
+        {
+            PlayerPrefs.SetInt(PlayerPrefs.GetString(LevelSelect.NOW_LEVEL), startNum);
+
+            int sum = 0;
+            for (int i = 0; i < levelNum; i++)
+            {
+                sum += PlayerPrefs.GetInt(LevelSelect.LEVEL + i.ToString());
+            }
+            PlayerPrefs.SetInt(TOTAL, sum);
+            print("GameManager ---> Sum=" + sum);
+        }
+
+    }
 
 }

@@ -81,18 +81,16 @@ PrefabInstance:
         type: 3}
       propertyPath: pigs.Array.data[1]
       value: 
-      objectReference: {fileID: 3998941364665710306}
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257071048571031055, guid: a62eae88444ee44b6851f35fe968f8fc,
+        type: 3}
+      propertyPath: m_Name
+      value: Level2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6925149816295427082, guid: a62eae88444ee44b6851f35fe968f8fc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a62eae88444ee44b6851f35fe968f8fc, type: 3}
---- !u!114 &3998941364665710306 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2749758518403756527, guid: a62eae88444ee44b6851f35fe968f8fc,
-    type: 3}
-  m_PrefabInstance: {fileID: 1249200473916606221}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acb89a689e7cd4014a491968b16aa6e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
